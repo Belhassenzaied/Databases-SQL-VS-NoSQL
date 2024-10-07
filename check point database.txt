@@ -1,0 +1,65 @@
+SQL :
+Le langage SQL (Structured Query Language) est un langage informatique utilisé pour exploiter des bases de données. Il permet de façon générale la définition, la manipulation et le contrôle de sécurité de données.
+
+Dans la pratique, le langage SQL est utilisé pour créer des tables, ajouter des enregistrements sous forme de lignes, interroger une base de données, la mettre à jour, ou encore gérer les droits d'utilisateurs de cette base de données. Il est bien supporté par la très grande majorité des systèmes de gestion de base de données (SGBD). Créé au début des années 1970 par Donald D. Chamberlin et Raymond F. Boyce, tous deux chez IBM, le langage SQL est aujourd'hui reconnu comme une norme internationale.
+
+
+NoSQL :
+Les bases de données NoSQL (AKA « pas seulement SQL ») stockent les données différemment des tables relationnelles. Les bases de données NoSQL sont disponibles dans une variété de types en fonction de leur modèle de données. Les principaux types sont
+document
+, clé-valeur, colonne large et graphique. Ils fournissent des schémas flexibles et s'adaptent facilement à de grandes quantités de données volumineuses et à des charges d'utilisateurs élevées.
+
+Dans cet article, vous apprendrez ce qu'est une base de données NoSQL, pourquoi (et quand !) vous devriez en utiliser une et comment commencer.
+
+Table des matières
+Types de bases de données — NoSQL
+Au fil du temps, quatre grands
+types de bases de données NoSQL
+ont émergé : des bases de données documentaires,
+bases de données clé-valeur
+, les magasins à colonnes larges et les bases de données graphiques. De nos jours, les bases de données multi-modèles deviennent également très populaires.
+
+Bases de données orientées documents
+Une base de données orientée document stocke les données dans des documents similaires aux objets JSON (JavaScript Object Notation). Chaque document contient des paires de champs et de valeurs. Les valeurs peuvent généralement être de différents types, notamment des chaînes, des nombres, des booléens, des tableaux ou même d'autres objets. Une base de données de documents offre un modèle de données flexible, particulièrement adapté aux ensembles de données semi-structurés et généralement non structurés. Elles prennent également en charge les structures imbriquées, ce qui facilite la représentation de relations complexes ou de données hiérarchiques.
+
+Voici des exemples de bases de données de documents :
+MongoDB
+et Couchbase. Un document typique ressemblera à ce qui suit :
+
+Extrait de code
+1
+{
+2
+  "_id" : "12345" ,
+3
+  "nom" : "foo bar" ,
+4
+  "courriel" : "foo@bar.com" ,
+5
+  "adresse" : {
+6
+    "rue" : "123 foo street" ,
+7
+    "ville" : "une ville" ,
+8
+    "état" : "un certain état" ,
+9
+    "code postal" : "123456"
+10
+  },
+11
+  "loisirs" : [ "musique" , ​​"guitare" , "lecture" ]
+12
+}
+
+Bases de données clé-valeur
+Un magasin de clés-valeurs est un type de base de données plus simple où chaque élément contient des clés et des valeurs. Chaque clé est unique et associée à une valeur unique. Elles sont utilisées pour la mise en cache et la gestion des sessions et offrent des performances élevées en lecture et en écriture car elles ont tendance à stocker des éléments en mémoire. Les exemples sont Amazon DynamoDB et Redis. Une vue simple des données stockées dans une base de données clé-valeur est donnée ci-dessous :
+
+Extrait de code
+1
+Clé : utilisateur : 12345
+2
+Valeur : { "nom" : "foo bar" , "email" : "foo@bar.com" , "désignation" : "développeur de logiciel" }
+
+Magasins à colonnes larges
+Les magasins à colonnes larges stockent les données dans des tables, des lignes et des colonnes dynamiques. Les données sont stockées dans des tables. Cependant, contrairement aux bases de données SQL traditionnelles, les magasins à colonnes larges sont flexibles, où différentes lignes peuvent avoir différents ensembles de colonnes. Ces bases de données peuvent utiliser des techniques de compression de colonnes pour réduire l'espace de stockage et améliorer les performances. Les lignes et colonnes larges permettent une récupération efficace des données éparses et larges. Apache Cassandra et HBase sont quelques exemples de magasins à colonnes larges. Un exemple typique de la manière dont les données sont stockées dans une colonne large
